@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Questionnaire</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: none;
+            text-align: center;
+        }
+
+        .start-btn {
+            width: 91px;
+            height: 46px;
+            margin: 20px auto;
+            cursor: pointer;
+            background: url(common/START_BUTTON_NORMAL.png) no-repeat;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <a onclick="start();">
+        <div class="start-btn"></div>
+    </a>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../../scripts/icecubes.js"></script>
+<script src="../../scripts/cookie.js"></script>
+
+<script>
+    $(function() {
+        setuserdetail();
+    });
+
+    function start() {
+        localStorage.setItem('playattempt', 0);
+        icecubes.start('te');
+        window.location.href = "clue1.html";
+    }
+
+</script>
+
+
+</html>

@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000;
+    letter-spacing: 0.0200em;
+    -webkit-font-smoothing: antialiased;
+}
+img {
+    border: none;
+    outline: none;
+}
+a {
+    outline: none;
+}
+.container {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+header {
+    width: 100%;
+    min-height: 55px;
+    height: auto;
+    float: left;
+    background: url(../../common/header-bg.png) repeat-x;
+}
+.centerLayout {
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    float: none;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+}
+h1 {
+    margin: 10px 0 0 0;
+    color: #fff;
+    text-align: center;
+}
+.mainbg {
+    background: url(../images1/BG_U3_A2_Q1.png) no-repeat;
+    height: 700px;
+    position: relative;
+}
+.cutome-text {
+    font-size: 12px;
+    line-height: 20px;
+}
+.tray {
+    width: 186px;
+    height: 268px;
+    position: absolute;
+    background: url(../images1/ICE_TRAY.png) no-repeat;
+    top: 330px;
+    left: 330px;
+}
+.glass {
+    width: 214px;
+    height: 242px;
+    position: absolute;
+    top: 348px;
+    left: 518px;
+    z-index: 100;
+}
+.cubes {
+    cursor: pointer;
+}
+.cube1 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 360px;
+    left: 392px;
+    z-index: 200;
+}
+.cube2 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 360px;
+    left: 435px;
+    z-index: 200;
+}
+.cube3 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 360px;
+    left: 477px;
+    z-index: 200;
+}
+.cube4 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 390px;
+    left: 392px;
+    z-index: 200;
+}
+.cube5 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 390px;
+    left: 435px;
+    z-index: 200;
+}
+.cube6 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 390px;
+    left: 477px;
+    z-index: 200;
+}
+.cube7 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 420px;
+    left: 392px;
+    z-index: 200;
+}
+.cube8 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 420px;
+    left: 435px;
+    z-index: 200;
+}
+.cube9 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 420px;
+    left: 477px;
+    z-index: 200;
+}
+.cube10 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 450px;
+    left: 392px;
+    z-index: 200;
+}
+.cube11 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 450px;
+    left: 435px;
+    z-index: 200;
+}
+.cube12 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 450px;
+    left: 477px;
+    z-index: 200;
+}
+.cube13 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 480px;
+    left: 392px;
+    z-index: 200;
+}
+.cube14 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 480px;
+    left: 435px;
+    z-index: 200;
+}
+.cube15 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 480px;
+    left: 477px;
+    z-index: 200;
+}
+.cube16 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 510px;
+    left: 392px;
+    z-index: 200;
+}
+.cube17 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 510px;
+    left: 435px;
+    z-index: 200;
+}
+.cube18 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 510px;
+    left: 477px;
+    z-index: 200;
+}
+.cube19 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 540px;
+    left: 392px;
+    z-index: 200;
+}
+.cube20 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 540px;
+    left: 435px;
+    z-index: 200;
+}
+.cube21 {
+    width: 27px;
+    height: 29px;
+    position: absolute;
+    top: 540px;
+    left: 477px;
+    z-index: 200;
+}
+.submit {
+    width: 107px;
+    height: 34px;
+    position: absolute;
+    top: 636px;
+    left: 275px;
+    z-index: 300;
+    cursor: pointer;
+}
+.reset {
+    width: 107px;
+    height: 34px;
+    position: absolute;
+    top: 636px;
+    left: 538px;
+    z-index: 200;
+    cursor: pointer;
+}
+.popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8) url(../images1/CORRECT_POPUP.png) no-repeat center center;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    text-align: center;
+    display: none;
+}
+.message {
+    width: 265px;
+    height: 100px;
+    position: absolute;
+    left: calc(50% - 140px);
+    top: calc(50% - 55px);
+    font-size: 16px;
+}
+.message p {
+    margin-bottom: 110px;
+}
+.ans-reset {
+    cursor: pointer;
+}

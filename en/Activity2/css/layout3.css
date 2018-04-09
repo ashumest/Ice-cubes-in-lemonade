@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+html,
+body {
+    background: none;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000;
+    letter-spacing: 0.0200em;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    border: none;
+    outline: none;
+}
+
+a {
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+header {
+    width: 100%;
+    min-height: 55px;
+    height: auto;
+    float: left;
+    background: url(../../common/header-bg.png) repeat-x;
+}
+
+.centerLayout {
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    float: none;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+}
+
+h1 {
+    margin: 10px 0 0 0;
+    color: #fff;
+    text-align: center;
+}
+
+.mainbg {
+    background: url(../images3/BG_U3_A1_Q5.png) no-repeat;
+    height: 700px;
+    position: relative;
+}
+
+.cutome-text {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.textfiled1 {
+    width: 60px;
+    height: 15px;
+    position: absolute;
+    top: 348px;
+    left: 560px;
+    z-index: 300;
+}
+
+.textfiled2 {
+    width: 60px;
+    height: 15px;
+    position: absolute;
+    top: 348px;
+    left: 650px;
+    z-index: 300;
+}
+
+.textfiled3 {
+    width: 60px;
+    height: 15px;
+    position: absolute;
+    top: 395px;
+    left: 560px;
+    z-index: 300;
+}
+
+.textfiled4 {
+    width: 60px;
+    height: 15px;
+    position: absolute;
+    top: 395px;
+    left: 650px;
+    z-index: 300;
+}
+
+.textfiled1 input[type='text'],
+.textfiled2 input[type='text'],
+.textfiled3 input[type='text'],
+.textfiled4 input[type='text'] {
+    width: 100%;
+    border: none;
+}
+
+.submit {
+    width: 107px;
+    height: 34px;
+    position: absolute;
+    top: 445px;
+    left: 410px;
+    z-index: 300;
+    cursor: pointer;
+    display: block;
+}
+.submit1 {
+    width: 107px;
+    height: 34px;
+    position: absolute;
+    top: 441px;
+    left: 406px;
+    z-index: 301;
+    display: none;
+    opacity: 0.5;
+}
+.reset {
+    width: 107px;
+    height: 34px;
+    position: absolute;
+    top: 445px;
+    left: 600px;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 400;
+    text-align: center;
+    display: none;
+}
+
+.message {
+    width: 265px;
+    height: 100px;
+    position: absolute;
+    left: calc(50% - 140px);
+    top: calc(50% - 55px);
+    font-size: 16px;
+}
+
+.message p {
+    margin-bottom: 196px;
+}
+
+.ans-reset {
+    cursor: pointer;
+}

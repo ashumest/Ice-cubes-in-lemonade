@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity 1 | Question 4</title>
+    <link href="css/layout4.css" rel="stylesheet"> </head>
+
+<body>
+    <div class="centerLayout">
+        <div class="container mainbg">
+            <div class="textfiled">
+                <textarea id="myanswer"></textarea>
+            </div>
+            <div class="submit"><img src="images4/SUBMIT_NORMAL.png"></div>
+            <div class="reset"><img src="images4/RESET_OVER_new.png"></div>
+            <div class="popup">
+                <div class="message">
+                    <p></p> <img src="images4/RESET_NORMAL_new.png" class="ans-reset"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../../scripts/icecubes.js"></script>
+<script src="../../scripts/cookie.js"></script>
+<script>
+    var qid = 4;
+    $(function() {
+        icecubes.readData();
+        $('.reset').click(function() {
+            location.reload();
+        });
+        $('.submit').click(function() {
+            $('.popup').css('display', 'block');
+            $('.message p').html('ध्यान दें कि जब बर्फ के किसी क्यूब का साइज़ दूसरे से आधा है, तो गिलास को पूरा भरने के लिए बर्फ के इन क्युबों की संख्या दूसरे की तुलना में दोगुनी होगी। ऐसे मामलों में हम कहते हैं कि गिलास को पूरा भरने के लिए आवश्यक बर्फ के क्यूबों की संख्या बर्फ के क्यूबों के साइज़ के व्युत्क्रमानुपाती है। ');
+            $('.ans-reset').attr('src', 'images4/NEXT_BUTTON_NORMAL.png');
+            icecubes.addAnswer($('#myanswer').val(), true);
+        });
+        $('.ans-reset').click(function() {
+            window.open('clue5.html', '_self');
+            return false;
+        });
+    });
+
+</script>
+
+</html>

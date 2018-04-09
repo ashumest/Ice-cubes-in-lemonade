@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity 2 | Question 5</title>
+    <link href="css/layout5.css" rel="stylesheet"> </head>
+
+<body>
+    <div class="centerLayout">
+        <div class="container mainbg">
+            <div class="textfiled">
+                <textarea id="myanswer"></textarea>
+            </div>
+            <div class="submit"><img src="images5/SUBMIT_NORMAL.png"></div>
+            <div class="reset"><img src="images5/RESET_OVER_new.png"></div>
+            <div class="popup">
+                <div class="message">
+                    <p>Oops! The lemonade has spilled over! Try adding fewer ice cubes.</p>   <img src="images5/CLOSE_TAB.png" class="ans-reset"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../../scripts/cookie.js"></script>
+<script src="../../scripts/icecubes.js"></script>
+<script>
+    var qid = 5;
+    $(function() {
+        icecubes.readData();
+        $('.reset').click(function() {
+            location.reload();
+        });
+        $('.submit').click(function() {
+            $('.popup').css('display', 'block');
+            $('.message p').html('Notice that the value in the fourth column remains constant, that is, 10/3. This fixed value is known as the constant of proportionality. Close the tab to proceed.');
+            $('.ans-reset').attr('src', 'images5/NEXT_BUTTON_NORMAL.png');
+            icecubes.addAnswer($('#myanswer').val(), true);
+        });
+        $('.ans-reset').click(function() {
+            icecubes.end();
+            icecubes.updateScore();
+            /*window.open('index.html', '_self');*/
+            return false;
+        });
+    });
+
+</script>
+
+</html>
