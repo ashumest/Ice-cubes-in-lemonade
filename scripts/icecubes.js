@@ -1,7 +1,6 @@
 // JavaScript source code
 var myData = {
     "appData": {
-        "appName":"",
         "starttime": "",
         "endtime": "",
         "rightanswers": 0,
@@ -27,7 +26,7 @@ var icecubes = {
     start: function (lng) {
         myData.userId = $.cookie("user_id");
         myData.buddyIds = $.cookie("buddy_ids");
-        myData.appData.appName = "Astroamer_icecubes_Track";
+        myData.appName = "Astroamer_icecubes_Track";
         myData.createdAt = timeStamp();
         myData.appData.starttime = timeStamp();
         myData.language = lng;
