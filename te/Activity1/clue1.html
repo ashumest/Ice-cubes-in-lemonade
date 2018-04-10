@@ -49,15 +49,15 @@
             if (playattempt == 0) {
                 if (counter == 0 || counter == 1 || counter == 2) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा। कुछ और बर्फ के क्यूब डालने की कोशिश करें।');
+                    $('.message p').html('గ్లాసు ఇంకా పూర్తిగా నిండలేదు.  మరిన్ని ఐస్ ముక్కలు కలిపి ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false);
                 } else if (counter >= 4) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।');
+                    $('.message p').html('అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి'');
                     icecubes.addAnswer(counter + '-ice-cubes', false);
                 } else if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('अच्छा किया । गिलास अब पूरा भर गया है।');
+                    $('.message p').html('అయ్యో! లెమనేడ్ ఒలికి పోయింది!  కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true);
@@ -65,13 +65,13 @@
             } else {
                 if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('अच्छा किया । गिलास अब पूरा भर गया है।');
+                    $('.message p').html('అయ్యో! లెమనేడ్ ఒలికి పోయింది!  కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true);
                 } else {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा। आपको गिलास को पूरा भरने के लिए बर्फ के 3 क्यूब और डालने चाहिए थे। ');
+                    $('.message p').html('గ్లాసు ఇంకా పూర్తిగా నిండలేదు. గ్లాసు పూర్తిగా నిండటానికి నువ్వు  మూడు  (3) ఐస్ ముక్కలు కలపాల్సింది. ');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(counter + '-ice-cubes', false);
                 }

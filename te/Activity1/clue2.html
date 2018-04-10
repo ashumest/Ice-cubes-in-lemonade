@@ -45,27 +45,27 @@
             if (playattempt <= 1) {
                 if (myVal == 6) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('अच्छा किया ! आपका अनुमान सही है।');
+                    $('.message p').html('బాగా చేసారు! మీరు ఊహించినది సరైనది');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(myVal + '-ice-cubes', true);
                 } else if (myVal > 6) {
                     if (localStorage.getItem('playattempt') == 0) {
                         $('.popup').css('display', 'block');
-                        $('.message p').html('ओह ! आपका अनुमान गलत है। आपने बहुत सारे बर्फ के क्यूब डाल दिए ! फिर से प्रयास करने के लिए दुबारा सजायें बटन पर क्लिक करें।');
+                        $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. మీరు చాలా ఎక్కువ ఐస్ ముక్కలు కలిపారు!  మళ్ళీ  ప్రయత్నించడానికి రీసెట్ బటన్‌ని క్లిక్ చేయండి.');
                     } else {
                         $('.popup').css('display', 'block');
-                        $('.message p').html('ओह ! आपका अनुमान गलत है। आपको अमन का गिलास पूरा भरने के लिए बर्फ के 6 क्यूब डालने चाहिए थे। ');
+                        $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. గ్లాసు పూర్తిగా నిండటానికి నువ్వు  ఆరు (6) ఐస్ ముక్కలు కలపాల్సింది. ');
                         $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     }
                     icecubes.addAnswer(myVal + '-ice-cubes', false);
                 } else if (myVal < 6) {
                     if (localStorage.getItem('playattempt') == 0) {
                         $('.popup').css('display', 'block');
-                        $('.message p').html('ओह ! आपका अनुमान गलत है ! गिलास अभी भी पूरा नहीं भरा। फिर से प्रयास करने के लिए दुबारा सजायें बटन पर क्लिक करें।');
+                        $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. గ్లాసు ఇంకా పూర్తిగా నిండలేదు.  మళ్ళీ  ప్రయత్నించడానికి రీసెట్బటన్‌ని క్లిక్ చేయండి.');
                     } else {
                         $('.popup').css('display', 'block');
-                        $('.message p').html('ओह ! आपका अनुमान गलत है। आपको अमन का गिलास पूरा भरने के लिए बर्फ के 6 क्यूब डालने चाहिए थे। ');
+                        $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. గ్లాసు పూర్తిగా నిండటానికి నువ్వు  ఆరు (6) ఐస్ ముక్కలు కలపాల్సింది. ');
                         $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     }
                     icecubes.addAnswer(myVal + '-ice-cubes', false);
