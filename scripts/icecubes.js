@@ -26,7 +26,7 @@ var icecubes = {
     start: function (lng) {
         myData.userId = $.cookie("user_id");
         myData.buddyIds = $.cookie("buddy_ids");
-        myData.appName = "Astroamer_icecubes_Track";
+        myData.appName = "Ice Cubes";
         myData.createdAt = timeStamp();
         myData.appData.starttime = timeStamp();
         myData.language = lng;
@@ -67,6 +67,7 @@ var icecubes = {
             }
         }
         icecubes.save();
+        icecubes.updateScore();
     },
     save: function () {
         $.cookie("data", JSON.stringify(myData));
