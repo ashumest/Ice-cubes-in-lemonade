@@ -63,15 +63,15 @@
             if (playattempt == 0) {
                 if (counter >= 0 && counter <= 17) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा। कुछ और बर्फ के क्यूब डालने की कोशिश करें।');
+                    $('.message p').html('గ్లాసు ఇంకా పూర్తిగా నిండలేదు. మరిన్ని ఐస్ ముక్కలు కలిపి ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false);
                 } else if (counter >= 19) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।');
+                    $('.message p').html('అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు చేర్చి ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false);
                 } else if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('अच्छा किया। गिलास अब पूरा भर गया है।');
+                    $('.message p').html('బాగా చేసారు. ఇప్పుడు గ్లాసు నిండుగా ఉన్నది.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true);
@@ -79,13 +79,13 @@
             } else {
                 if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('अच्छा किया। गिलास अब पूरा भर गया है।');
+                    $('.message p').html('బాగా చేసారు. ఇప్పుడు గ్లాసు నిండుగా ఉన్నది.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true);
                 } else {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा जामुनी का गिलास 40% भरा था। अत:, गिलास का शेष 60% भरने के लिए बर्फ के 18 क्यूब चाहिए।');
+                    $('.message p').html('జముని గ్లాసు 40% నిండింది. కావున, మిగిలిన 60% గ్లాసు సింపడానికి 18 ఐస్ ముక్కలు అవసరమవుతాయి.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(counter + '-ice-cubes', false);
                 }
