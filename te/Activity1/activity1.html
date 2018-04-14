@@ -40,7 +40,7 @@
     var lng = 'te';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Jamuni decides to add some ice cubes from Tray 1 to her glass of lemonade so it becomes both full and cold!');
+        icecubes.addQuestion('తన లెమనేడ్ గ్లాసు లోకి  ట్రే-1 నుంచి కొన్ని ఐస్ ముక్కలు వేసుకోవాలని జముని నిర్ణయిస్తుంది అది నిండుగా మరియు చల్లగా ఉండగలదు!');
         playattempt = parseInt(localStorage.getItem('playattempt'));
         $('.reset').click(function() {
             location.reload();
@@ -49,11 +49,11 @@
             if (parseInt(localStorage.getItem('playattempt')) == 0) {
                 if (counter == 0 || counter == 1 || counter == 2) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('The glass is still not full. Try adding a few more ice cubes.');
+                    $('.message p').html('గ్లాసు ఇంకా పూర్తిగా నిండలేదు.  మరిన్ని ఐస్ ముక్కలు కలిపి ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter >= 4) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! The lemonade has spilled over! Try adding fewer ice cubes.');
+                    $('.message p').html('అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter == 3) {
                     $('.popup').css('display', 'block');
@@ -65,13 +65,13 @@
             } else {
                 if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('బాగా చేసారు.  ఇప్పుడు  గ్లాసు నిండుగా ఉన్నది.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('The glass is still not full. You should have added 3 ice cubes in all to make the glass full.');
+                    $('.message p').html('గ్లాసు ఇంకా పూర్తిగా నిండలేదు. గ్లాసు పూర్తిగా నిండటానికి నువ్వు  మూడు  (3) ఐస్ ముక్కలు కలపాల్సింది.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
