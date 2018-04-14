@@ -16,7 +16,7 @@
             <div class="reset"><img src="images5/RESET_OVER_new.png"></div>
             <div class="popup">
                 <div class="message">
-                    <p>Oops! The lemonade has spilled over! Try adding fewer ice cubes.</p> <img src="images5/CLOSE_TAB.png" class="ans-reset"> </div>
+                    <p>అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి.</p> <img src="images5/CLOSE_TAB.png" class="ans-reset"> </div>
             </div>
         </div>
     </div>
@@ -31,13 +31,13 @@
     var lng = 'te';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Describe the pattern you see and click Submit to check your answer.');
+        icecubes.addQuestion('మీరు చూసిన పద్ధతిని వివరించండి మరియు మీ జవాబు సరైందోకాదో చూసుకొనుటకు జవాబు నమోదు క్లిక్ చేయండి.');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that the value of s × n (in the third column) remains constant, that is, 6. This fixed value is known as the constant of proportionality.');
+            $('.message p').html('s n (మూడవ కాలంలో) విలువ స్థిరంగా, అంటే, ఆరు (6) అని గమనించండి  ఈ  స్థిర విలువని అనుపాత స్థిరాంకం  అని అంటారు.');
             $('.ans-reset').attr('src', 'images5/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });
