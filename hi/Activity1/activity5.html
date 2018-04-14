@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity 1 | Question 5</title>
+    <link href="css/layout5.css" rel="stylesheet"> </head>
+
+<body>
+    <div class="centerLayout">
+        <div class="container mainbg">
+            <div class="textfiled">
+                <textarea id="myanswer"></textarea>
+            </div>
+            <div class="submit"><img src="images5/SUBMIT_NORMAL.png"></div>
+            <div class="reset"><img src="images5/RESET_OVER_new.png"></div>
+            <div class="popup">
+                <div class="message">
+                    <p>Oops! The lemonade has spilled over! Try adding fewer ice cubes.</p> <img src="images5/CLOSE_TAB.png" class="ans-reset"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../../scripts/icecubes.js"></script>
+<script src="../../scripts/cookie.js"></script>
+<script>
+    var qid = 5;
+    var playattempt = 0;
+    var lng = 'hi';
+    $(function() {
+        icecubes.readData();
+        icecubes.addQuestion('Describe the pattern you see and click Submit to check your answer.');
+        $('.reset').click(function() {
+            location.reload();
+        });
+        $('.submit').click(function() {
+            $('.popup').css('display', 'block');
+            $('.message p').html('Notice that the value of s × n (in the third column) remains constant, that is, 6. This fixed value is known as the constant of proportionality.');
+            $('.ans-reset').attr('src', 'images5/NEXT_BUTTON_NORMAL.png');
+            icecubes.addAnswer($('#myanswer').val(), true, playattempt);
+        });
+        $('.ans-reset').click(function() {
+            myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
+            myData.appData.attempt[qid - 1].createdAt = timeStamp();
+            icecubes.save();
+            window.open('result.html', '_self');
+            return false;
+        });
+    });
+
+</script>
+</html>

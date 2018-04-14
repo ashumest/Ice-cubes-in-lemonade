@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity 1 | Question 3</title>
+    <link href="css/layout3.css" rel="stylesheet"> </head>
+
+<body>
+    <div class="centerLayout">
+        <div class="container mainbg">
+            <div class="textfiled1">
+                <input type="text" id="myanswer1"> </div>
+            <div class="textfiled2">
+                <input type="text" id="myanswer2" class="allownumericwithdecimal val1"> </div>
+            <div class="textfiled3">
+                <input type="text" id="myanswer3"> </div>
+            <div class="textfiled4">
+                <input type="text" id="myanswer4" class="allownumericwithdecimal val2"> </div>
+            <div class="submit"><img src="images3/SUBMIT_NORMAL.png"></div>
+            <div class="submit1"><img src="images3/SUBMIT_DOWN.png"></div>
+            <div class="reset"><img src="images3/RESET_NORMAL_new.png"></div>
+            <div class="popup"> <img src="images3/feedback_for_less-than3.jpg" id="mymessage">
+                <div class="message">
+                    <p></p><img src="images3/RESET_NORMAL_new.png" class="ans-reset"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../../scripts/icecubes.js"></script>
+<script src="../../scripts/cookie.js"></script>
+
+<script>
+    var win = 0;
+    var counter = 0;
+    var qid = 3;
+    var lng = 'hi';
+    var playattempt = 0;
+    $(function() {
+        icecubes.readData();
+        icecubes.addQuestion('You added bigger ice cubes to Jamuni’s glass and smaller ice cubes to Aman’s glass of lemonade to fill them up to the brim. Now, complete the following table based on your observations.');
+
+        $('.reset').click(function() {
+            location.reload();
+        });
+        $('.submit').click(function() {
+            var ans1 = $('#myanswer1').val();
+            var ans2 = $('#myanswer2').val();
+            var ans3 = $('#myanswer3').val();
+            var ans4 = $('#myanswer4').val();
+            if (ans1 == '6') {
+                counter = counter + 1
+            }
+            if (ans2 == '2/3') {
+                counter = counter + 1
+            }
+            if (ans3 == '6') {
+                counter = counter + 1
+            }
+            if (ans4 == '1/6') {
+                counter = counter + 1
+            }
+            if (counter == 4) {
+                win = 1;
+                $('.popup').css('display', 'block');
+                $('#mymessage').attr('src', 'images3/feedback_for_correct.png');
+                $('.ans-reset').attr('src', 'images3/NEXT_BUTTON_NORMAL.png');
+                icecubes.addAnswer("2cm3:sxn=6,s/n=2/3||1cm3:sxn=6,s/n=1/6", true, playattempt);
+            } else if (counter == 3) {
+                $('.popup').css('display', 'block');
+                $('#mymessage').attr('src', 'images3/feedback_for_3-4-correct.jpg');
+                $('.ans-reset').attr('src', 'images3/NEXT_BUTTON_NORMAL.png');
+                icecubes.addAnswer("2cm3:sxn=" + $('#myanswer1').val() + ",s/n=" + $('#myanswer2').val() + "||1cm3:sxn=" + $('#myanswer3').val() + ",s/n=" + $('#myanswer4').val(), false, playattempt);
+            } else if (counter <= 2) {
+                $('.popup').css('display', 'block');
+                $('#mymessage').attr('src', 'images3/feedback_for_less-than3.jpg');
+                $('.ans-reset').attr('src', 'images3/NEXT_BUTTON_NORMAL.png');
+                icecubes.addAnswer("2cm3:sxn=" + $('#myanswer1').val() + ",s/n=" + $('#myanswer2').val() + "||1cm3:sxn=" + $('#myanswer3').val() + ",s/n=" + $('#myanswer4').val(), false, playattempt);
+            }
+        });
+        $('.ans-reset').click(function() {
+            myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
+            myData.appData.attempt[qid - 1].createdAt = timeStamp();
+            icecubes.save();
+            window.open('activity4.html', '_self');
+            return false;
+        });
+        $(".allownumericwithdecimal").keyup(function() {
+            var myval1 = $('.val1').val();
+            var myval2 = $('.val2').val();
+            if (myval1.indexOf('.') !== -1 || myval2.indexOf('.') !== -1) {
+                $('.submit1').css('display', 'block');
+                $('.submit').css('display', 'none');
+            } else {
+                $('.submit1').css('display', 'none');
+                $('.submit').css('display', 'block');
+            }
+        });
+    });
+
+</script>
+
+</html>
