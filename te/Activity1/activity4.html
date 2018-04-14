@@ -31,13 +31,13 @@
     var lng = 'te';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Do you see a pattern in the 1st and 2nd columns of the table?');
+        icecubes.addQuestion('పైన పట్టికలో 1వ మరియు 2వ కాలంలలో ఒక పద్ధతిని మీరు చూసారా?');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that when the size of the ice cube is half the size of the other cube, the ice cubes required to fill the glass up to the brim are double in number. In such cases we say, the number of ice cubes required to fill the glass up to the brim is inversely proportional to the size of the ice cubes.');
+            $('.message p').html('ఒక ఐస్ ముక్క సైజు ఇంకొక ఐస్ ముక్క సైజులో సగం ఉన్నప్పుడు,  గ్లాసు అంచు వరకు నింపబడానికి కావలసిన ఐస్ ముక్కల సంఖ్య రెండు రెట్లు అని గమనించండి.');
             $('.ans-reset').attr('src', 'images4/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });
