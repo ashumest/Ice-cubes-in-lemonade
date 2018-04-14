@@ -16,7 +16,7 @@
             <div class="reset"><img src="images5/RESET_OVER_new.png"></div>
             <div class="popup">
                 <div class="message">
-                    <p>Oops! The lemonade has spilled over! Try adding fewer ice cubes.</p>   <img src="images5/CLOSE_TAB.png" class="ans-reset"></div>
+                    <p>అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి.</p>   <img src="images5/CLOSE_TAB.png" class="ans-reset"></div>
             </div>
         </div>
     </div>
@@ -31,13 +31,13 @@
     var lng = 'te';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Do you see a pattern in the 3rd and 4th columns of the table?');
+        icecubes.addQuestion('పైన పట్టికలో 3వ మరియు 4వ కాలంలలో ఒక పద్ధతిని మీరు చూసారా?');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that the value in the fourth column remains constant, that is, 10/3. This fixed value is known as the constant of proportionality. Close the tab to proceed.');
+            $('.message p').html('నాల్గవ  కాలంలో విలువ స్థిరంగా ఉందని, అంటే, 10/3 అని గమనించండి ఈ స్థిర విలువని అనుపాత స్థిరాంకం అని అంటారు.');
             $('.ans-reset').attr('src', 'images5/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });
