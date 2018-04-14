@@ -16,7 +16,7 @@
 <div class="reset"><img src="images2/RESET_NORMAL_new.png"></div>
             <div class="popup">
 <div class="message">
-                    <p>ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।</p> <img src="images2/RESET_NORMAL_new.png" class="ans-reset"> </div>
+                    <p>అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు  చేర్చి  ప్రయత్నించండి.</p> <img src="images2/RESET_NORMAL_new.png" class="ans-reset"> </div>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
     $(function() {
 
         icecubes.readData();
-        icecubes.addQuestion('Predict how many ice cubes Aman should add from Tray 2 to his glass so that the lemonade comes up to the brim?');
+        icecubes.addQuestion('లెమనేడ్ అంచువరకూ రావడానికి  ట్రే -2 నుండి తన గ్లాసులో ఎన్ని ఐస్ ముక్కలు అమన్ కలిపాడో ఊహించండి?');
         playattempt = localStorage.getItem('playattempt');
         $('.reset').click(function() {
             location.reload();
@@ -50,34 +50,34 @@
             if (parseInt(localStorage.getItem('playattempt')) == 0) {
                 if (myVal == 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done! Your prediction is correct.');
+                    $('.message p').html('బాగా చేసారు! మీరు ఊహించినది సరైనది.');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     win = 1;                    
                     icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal > 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. You added too many ice cubes!');
+                    $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. మీరు చాలా ఎక్కువ ఐస్ ముక్కలు కలిపారు!');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal < 6) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. The glass is still not full.');
+                    $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. గ్లాసు ఇంకా పూర్తిగా నిండలేదు.');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
             } else {
                 if (myVal == 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done! Your prediction is correct.');
+                    $('.message p').html('బాగా చేసారు! మీరు ఊహించినది సరైనది.');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal > 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. You should have added 6 ice cubes to make Aman’s glass full.');
+                    $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. గ్లాసు పూర్తిగా నిండటానికి నువ్వు  ఆరు (6) ఐస్ ముక్కలు కలపాల్సింది.');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal < 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. You should have added 6 ice cubes to make Aman’s glass full.');
+                    $('.message p').html('అయ్యో! మీ ఊహ సరికాదు. గ్లాసు పూర్తిగా నిండటానికి నువ్వు  ఆరు (6) ఐస్ ముక్కలు కలపాల్సింది.');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
