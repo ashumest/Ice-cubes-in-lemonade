@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity 1 | Question 2</title>
+    <link href="css/layout2.css" rel="stylesheet"> </head>
+
+<body>
+    <div class="centerLayout">
+        <div class="container mainbg">
+            <div class="textfiled">
+                <input type="text" id="myanswer" class="allownumericwithdecimal"> </div>
+            <div class="glass"> <img src="images2/glass0.png" id="myglass"> </div>
+            <div class="submit"><img src="images2/SUBMIT_NORMAL.png"></div>
+            <div class="reset"><img src="images2/RESET_NORMAL_new.png"></div>
+            <div class="popup">
+                <div class="message">
+                    <p>Oops! The lemonade has spilled over! Try adding fewer ice cubes.</p> <img src="images2/RESET_NORMAL_new.png" class="ans-reset"> </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../../scripts/icecubes.js"></script>
+<script src="../../scripts/cookie.js"></script>
+    
+<script>
+    var win = 0;
+    var qid = 2;
+    var playattempt = 0;
+    var lng = 'te';
+    $(function() {
+
+        icecubes.readData();
+        icecubes.addQuestion('Guess how many ice cubes Aman should add from Tray 2 to his glass so that the lemonade comes up to the brim?');
+        playattempt = localStorage.getItem('playattempt');
+        $('.reset').click(function() {
+            location.reload();
+        });
+        $('.submit').click(function() {
+
+            var myVal = $('#myanswer').val();
+            if (myVal <= 6) {
+                $('#myglass').attr('src', 'images2/glass' + myVal + '.png');
+            } else {
+                $('#myglass').attr('src', 'images2/glass7.png');
+            }
+
+            if (parseInt(localStorage.getItem('playattempt')) == 0) {
+                if (myVal == 6) {
+                    $('.popup').css('display', 'block');
+                    $('.message p').html('Well done! Your prediction is correct.');
+                    $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
+                    win = 1;                    
+                    icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
+                } else if (myVal > 6) {
+                    $('.popup').css('display', 'block');
+                    $('.message p').html('Oops! Your prediction is incorrect. You added too many ice cubes!');
+                    icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
+                } else if (myVal < 6) {
+                    $('.popup').css('display', 'block');
+                    $('.message p').html('Oops! Your prediction is incorrect. The glass is still not full.');
+                    icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
+                }
+            } else {
+                if (myVal == 6) {
+                    $('.popup').css('display', 'block');
+                    $('.message p').html('Well done! Your prediction is correct.');
+                    $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
+                    win = 1;
+                    icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
+                } else if (myVal > 6) {
+                    $('.popup').css('display', 'block');
+                    $('.message p').html('Oops! Your prediction is incorrect. You should have added 6 ice cubes to make Aman’s glass full.');
+                    $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
+                    icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
+                } else if (myVal < 6) {
+                    $('.popup').css('display', 'block');
+                    $('.message p').html('Oops! Your prediction is incorrect. You should have added 6 ice cubes to make Aman’s glass full.');
+                    $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
+                    icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
+                }
+            }
+            localStorage.setItem('playattempt', parseInt(localStorage.getItem('playattempt')) + 1);
+        });
+        $('.ans-reset').click(function() {
+            if (win == 1) {
+                localStorage.setItem('playattempt', 0);
+                myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
+                myData.appData.attempt[qid - 1].createdAt = timeStamp();
+                icecubes.save();
+                window.open('activity3.html', '_self');
+                return false;
+            }
+            if (parseInt(localStorage.getItem('playattempt')) == 1) {
+                location.reload();
+            } else {
+                localStorage.setItem('playattempt', 0);
+                myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
+                myData.appData.attempt[qid - 1].createdAt = timeStamp();
+                icecubes.save();
+                window.open('activity3.html', '_self');
+            }
+        });
+        $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+            $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+    });
+
+</script>
+
+</html>
