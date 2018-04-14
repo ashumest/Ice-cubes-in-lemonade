@@ -155,7 +155,7 @@ function timeStamp() {
 }
 
 function setuserdetail() {
-    $.cookie("user_id", "1");
-    $.cookie("session_ids", "qe6wydl8mflsw3fol8u92t7e0os1q4z2");
-    $.cookie("buddy_ids", "1988");
+    //$.cookie("user_id", "1");
+    //$.cookie("session_ids", "qe6wydl8mflsw3fol8u92t7e0os1q4z2");
+    //$.cookie("buddy_ids", "1988");
 }
