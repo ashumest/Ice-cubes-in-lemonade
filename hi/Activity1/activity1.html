@@ -40,7 +40,7 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Jamuni decides to add some ice cubes from Tray 1 to her glass of lemonade so it becomes both full and cold!');
+        icecubes.addQuestion('जामुनी ट्रे 1 से कुछ बर्फ के क्यूब अपने नींबुपानी के गिलास में डालना तय करती है, जिससे पूरा भर जाए और ठंडा हो जाए !');
         playattempt = parseInt(localStorage.getItem('playattempt'));
         $('.reset').click(function() {
             location.reload();
@@ -49,15 +49,15 @@
             if (parseInt(localStorage.getItem('playattempt')) == 0) {
                 if (counter == 0 || counter == 1 || counter == 2) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('The glass is still not full. Try adding a few more ice cubes.');
+                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा। कुछ और बर्फ के क्यूब डालने की कोशिश करें।');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter >= 4) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! The lemonade has spilled over! Try adding fewer ice cubes.');
+                    $('.message p').html('ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('अच्छा किया । गिलास अब पूरा भर गया है।');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
@@ -65,13 +65,13 @@
             } else {
                 if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('अच्छा किया । गिलास अब पूरा भर गया है।');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('The glass is still not full. You should have added 3 ice cubes in all to make the glass full.');
+                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा। आपको गिलास को पूरा भरने के लिए बर्फ के 3 क्यूब और डालने चाहिए थे। ');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }

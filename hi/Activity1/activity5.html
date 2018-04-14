@@ -31,13 +31,13 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Describe the pattern you see and click Submit to check your answer.');
+        icecubes.addQuestion('क्या आप सारणी के तीसरे और चौथे कॉलमों में कोई पैटर्न देखते हैं?');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that the value of s × n (in the third column) remains constant, that is, 6. This fixed value is known as the constant of proportionality.');
+            $('.message p').html('ध्यान दें कि s*n का आयतन (तीसरे कॉलम में) स्थिर, अर्थात 6  रहता है। यह स्थिर मान आनुपातिकता स्थिरांक कहलाता है।');
             $('.ans-reset').attr('src', 'images5/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });

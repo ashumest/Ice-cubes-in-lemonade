@@ -32,13 +32,13 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Do you see a pattern in the 1st and 2nd columns of the table?');
+        icecubes.addQuestion('क्या आप सारणी के पहले और दूसरे कॉलमों में कोई पैटर्न देखते हैं?');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that when the size of the ice cube is half the size of the other cube, the ice cubes required to fill the glass up to the brim are double in number. In such cases we say, the number of ice cubes required to fill the glass up to the brim is inversely proportional to the size of the ice cubes.');
+            $('.message p').html('ध्यान दें कि जब बर्फ के किसी क्यूब का साइज़ दूसरे से आधा है, तो गिलास को पूरा भरने के लिए बर्फ के इन क्युबों की संख्या दूसरे की तुलना में दोगुनी होगी। ऐसे मामलों में हम कहते हैं कि गिलास को पूरा भरने के लिए आवश्यक बर्फ के क्यूबों की संख्या बर्फ के क्यूबों के साइज़ के व्युत्क्रमानुपाती है। ');
             $('.ans-reset').attr('src', 'images4/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });
