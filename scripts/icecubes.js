@@ -33,7 +33,7 @@ var attempt = {
 var icecubes = {
     start: function (lng) {
         localStorage.setItem("data", "");
-        setuserdetail();
+        //setuserdetail();
         myData.language = lng;
         myData.userId = $.cookie("user_id");
         myData.buddyIds = $.cookie("buddy_ids");
@@ -122,7 +122,7 @@ var icecubes = {
     updateScore: function (s) {
         icecubes.save();
         csrftoken = $.cookie("csrftoken");
-        $.ajax({
+        /*$.ajax({
             type: "POST",
             data: {
                 "payload": localStorage.getItem("data"),
@@ -133,8 +133,8 @@ var icecubes = {
             success: function (response) {
                 window.open('../../data.json', '_blank');
             }
-        });
-        /*$.ajax({
+        });*/
+        $.ajax({
             type: "POST",
             data: {
                 "payload": localStorage.getItem("data"),
@@ -145,7 +145,7 @@ var icecubes = {
             success: function (data) {
                 console.log(data);
             }
-        });*/
+        });
     }
 }
 
