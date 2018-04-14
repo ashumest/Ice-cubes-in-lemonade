@@ -55,7 +55,7 @@
     var lng = 'te';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Aman and Jamuni are still thirsty, and buy bigger glasses of lemonade this time. After 5 minutes, Jamuni’s glass of lemonade is 40% full while Aman’s glass of lemonade is 70% full. All the ice has melted, since it is so hot. Help Jamuni add more ice to her glass and fill it up to the brim.');
+        icecubes.addQuestion('అమన్ మరియు జమునికి ఇంకా దాహంగా ఉన్నది, ఈ సారి పెద్ద గ్లాసులలో  లెమనేడ్ కొన్నారు. ఐదు నిమిషాల తరువాత, జముని లెమనేడ్ గ్లాసు  40% నిండింది కాగా అమన్  లెమనేడ్ గ్లాసు 70% నిండింది.  చాలా ఎండగా ఉన్నది కావున ఐస్ అంతా కరిగి పోయింది. జముని మరింత ఐస్ కలపడైనికి సహాయపడండి మరియు అంచు వరకూ నింపండి.');
         playattempt = parseInt(localStorage.getItem('playattempt'));
         $('.reset').click(function() {
             location.reload();
@@ -65,15 +65,15 @@
             if (parseInt(localStorage.getItem('playattempt')) == 0) {
                 if (counter >= 0 && counter <= 17) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('The glass is still not full. Try adding a few more ice cubes.');
+                    $('.message p').html('లాసు ఇంకా పూర్తిగా నిండలేదు. మరిన్ని ఐస్ ముక్కలు కలిపి ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter >= 19) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! The lemonade has spilled over! Try adding fewer ice cubes.');
+                    $('.message p').html('అయ్యో! లెమనేడ్ ఒలికి పోయింది! కొన్ని ఐస్ ముక్కలు చేర్చి ప్రయత్నించండి.');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('బాగా చేసారు.  ఇప్పుడు గ్లాసు నిండుగా ఉన్నది.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
@@ -81,7 +81,7 @@
             } else {
                 if (counter == 18) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('బాగా చేసారు.  ఇప్పుడు గ్లాసు నిండుగా ఉన్నది. ');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
