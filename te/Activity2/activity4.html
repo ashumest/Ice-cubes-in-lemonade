@@ -31,13 +31,13 @@
     var lng = 'te';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Do you see a pattern in the 1st and 2nd columns of the table?');
+        icecubes.addQuestion('పైన పట్టికలో 1వ మరియు 2వ కాలంలలో ఒక పద్ధతిని మీరు చూసారా?');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that when the percentage volume to be filled of the first glass is twice that of the second glass, the ice cubes required to fill the first glass up to the brim are also double in number.<br>In such cases we say, the number of ice cubes required to fill the glass up to the brim is directly proportional to the percentage volume of the glass to be filled up.');
+            $('.message p').html('మొదటి గ్లాసులో నింపాల్సిన ఘనపరిమాణం శాతం రెండవ గ్లాసుకు రెండు రెట్లు అయినప్పుడు, మొదటి గ్లాసులో  అంచు వరకు నింపాల్సిన ఐస్ ముక్కలు కూడా రెండు రెట్లు  ఉంటుంది.');
             $('.ans-reset').attr('src', 'images4/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });
