@@ -31,13 +31,13 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Do you see a pattern in the 3rd and 4th columns of the table?');
+        icecubes.addQuestion('क्या आप सारणी के तीसरे और चौथे कॉलमों में कोई पैटर्न देखतें हैं।');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that the value in the fourth column remains constant, that is, 10/3. This fixed value is known as the constant of proportionality. Close the tab to proceed.');
+            $('.message p').html('“ध्यान दें कि चौथे  कॉलम में मान  स्थिर रहता है, जो कि 10/3 है।  यह स्थिर मान आनुपातिकता स्थिरांक कहलाता है।');
             $('.ans-reset').attr('src', 'images5/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });

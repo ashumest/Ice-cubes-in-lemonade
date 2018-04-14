@@ -33,7 +33,7 @@
     $(function() {
 
         icecubes.readData();
-        icecubes.addQuestion('Predict how many ice cubes Aman should add from Tray 2 to his glass so that the lemonade comes up to the brim?');
+        icecubes.addQuestion('अनुमान लगाएँ कि अमन ट्रे 2 से कितने बर्फ के क्यूब अपने गिलास में डाले, ताकि गिलास नींबुपानी से ऊपर तक पूरा भर जाए? ');
         playattempt = localStorage.getItem('playattempt');
         $('.reset').click(function() {
             location.reload();
@@ -50,34 +50,34 @@
             if (parseInt(localStorage.getItem('playattempt')) == 0) {
                 if (myVal == 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done! Your prediction is correct.');
+                    $('.message p').html('“अच्छा किया ! आपका अनुमान सही है। ');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     win = 1;                    
                     icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal > 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. You added too many ice cubes!');
+                    $('.message p').html('ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal < 6) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. The glass is still not full.');
+                    $('.message p').html('“ओह ! आपका अनुमान गलत है! गिलास अभी भी पूरा नहीं भरा। ');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
             } else {
                 if (myVal == 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done! Your prediction is correct.');
+                    $('.message p').html('“अच्छा किया ! आपका अनुमान सही है। ');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal > 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. You should have added 6 ice cubes to make Aman’s glass full.');
+                    $('.message p').html('ओह ! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal < 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! Your prediction is incorrect. You should have added 6 ice cubes to make Aman’s glass full.');
+                    $('.message p').html('ओह ! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }

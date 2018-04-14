@@ -31,13 +31,13 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Do you see a pattern in the 1st and 2nd columns of the table?');
+        icecubes.addQuestion('क्या आप सारणी के पहले और दूसरे कॉलमों में कोई पैटर्न देखते हैं?');
         $('.reset').click(function() {
             location.reload();
         });
         $('.submit').click(function() {
             $('.popup').css('display', 'block');
-            $('.message p').html('Notice that when the percentage volume to be filled of the first glass is twice that of the second glass, the ice cubes required to fill the first glass up to the brim are also double in number.<br>In such cases we say, the number of ice cubes required to fill the glass up to the brim is directly proportional to the percentage volume of the glass to be filled up.');
+            $('.message p').html('“ ध्यान दें कि जब पहले गिलास में भरा जाने वाला प्रतिशत आयतन दूसरे गिलास की अपेक्षा दोगुना है, तो पहले गिलास को पूरा भरने के लिए आवश्यक बर्फ के क्यूबों की संख्या भी दोगुनी होगी। ऐसे मामलों में हम कहते हैं कि गिलास को ऊपर तक पूरा भरने के लिए आवश्यक बर्फ के क्यूबों कि संख्या, भरे जाने वाले गिलास के प्रतिशत आयतन के अनुक्रमानुपाती होती है।');
             $('.ans-reset').attr('src', 'images4/NEXT_BUTTON_NORMAL.png');
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });

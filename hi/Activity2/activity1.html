@@ -55,7 +55,7 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('Aman and Jamuni are still thirsty, and buy bigger glasses of lemonade this time. After 5 minutes, Jamuni’s glass of lemonade is 40% full while Aman’s glass of lemonade is 70% full. All the ice has melted, since it is so hot. Help Jamuni add more ice to her glass and fill it up to the brim.');
+        icecubes.addQuestion('अमन और जामुनी अभी भी प्यासे हैं, और इस बार वे नींबुपानी के बड़े गिलास खरीदते हैं। पाँच मिनट बाद जामुनी का गिलास 40% भरा हुआ और अमन का गिलास 70% भरा हुआ है। सारी बर्फ पिघल गई है, क्योंकि गरमी बहुत है। जामुनी को अपने गिलास में और बर्फ डालने में मदद करें और गिलास पूरा भर दें।');
         playattempt = parseInt(localStorage.getItem('playattempt'));
         $('.reset').click(function() {
             location.reload();
@@ -65,15 +65,15 @@
             if (parseInt(localStorage.getItem('playattempt')) == 0) {
                 if (counter >= 0 && counter <= 17) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('The glass is still not full. Try adding a few more ice cubes.');
+                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा। कुछ और बर्फ के क्यूब डालने की कोशिश करें।');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter >= 19) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Oops! The lemonade has spilled over! Try adding fewer ice cubes.');
+                    $('.message p').html('ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (counter == 3) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('अच्छा किया। गिलास अब पूरा भर गया है।');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
@@ -81,13 +81,13 @@
             } else {
                 if (counter == 18) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('Well done. The glass is full now.');
+                    $('.message p').html('अच्छा किया। गिलास अब पूरा भर गया है।');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     win = 1;
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('You added too many ice cubes! You should have added 18 ice cubes in all to make the glass full.');
+                    $('.message p').html('गिलास अभी भी पूरा नहीं भरा जामुनी का गिलास 40% भरा था। अत:, गिलास का शेष 60% भरने के लिए बर्फ के 18 क्यूब चाहिए।');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
