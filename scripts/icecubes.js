@@ -16,18 +16,18 @@ var myData = {
     }
 }
 var attempt = {
-    "eventType": "clue_start",
-    "currentClue": "",
-    "cluestartTime": "",
+    "eventType": "activity_start",
+    "currentActivity": "",
+    "activity_startTime": "",
     "language": '',
     "NumberofAttempts": 0,
     "FirstAttemptAnswer": "",
     "FirstAttemptValidity": "",
     "SecondAttemptAnswer": "",
     "SecondAttemptValidity": "",
-    "eventType1": "clue_end",
-    "clue_endTime": "",
-    "clueScore": "00",
+    "eventType1": "activity_end",
+    "activity_endTime": "",
+    "activityScore": "00",
     "createdAt": ""
 }
 var icecubes = {
@@ -54,12 +54,12 @@ var icecubes = {
         if (obj == null) {
             obj = $.extend(true, {}, attempt);
             obj.qid = qid;
-            obj.currentClue = 'Activity ' + qid + '_' + q;
+            obj.currentActivity = 'Activity ' + qid + '_' + q;
             myData.appData.attempt.push(obj);
         } else {
             obj.qid = qid;
         }
-        myData.appData.attempt[qid - 1].cluestartTime = timeStamp();
+        myData.appData.attempt[qid - 1].activity_startTime = timeStamp();
         icecubes.save();
     },
     addAnswer: function (id, e, a) {
@@ -78,7 +78,7 @@ var icecubes = {
                     obj.FirstAttemptAnswer = id;
                     obj.FirstAttemptValidity = 'correct';
                     obj.language = lng;
-                    obj.clueScore = '0';
+                    obj.activityScore = '0';
                 } else {
                     var att = $.extend(true, {}, attempt);
                     obj.NumberofAttempts = parseInt(a) + 1;
@@ -91,7 +91,7 @@ var icecubes = {
                     obj.NumberofAttempts = parseInt(a) + 1;
                     obj.SecondAttemptAnswer = id;
                     obj.SecondAttemptValidity = 'correct';
-                    obj.clueScore = '0';
+                    obj.activityScore = '0';
                     obj.language = lng;
                 } else {
                     var att = $.extend(true, {}, attempt);
@@ -155,7 +155,7 @@ function timeStamp() {
 }
 
 function setuserdetail() {
-    //$.cookie("user_id", "1");
-    //$.cookie("session_ids", "qe6wydl8mflsw3fol8u92t7e0os1q4z2");
-    //$.cookie("buddy_ids", "1988");
+    /*$.cookie("user_id", "1");
+    $.cookie("session_ids", "qe6wydl8mflsw3fol8u92t7e0os1q4z2");
+    $.cookie("buddy_ids", "1988");*/
 }
