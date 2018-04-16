@@ -44,8 +44,8 @@
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
-<script src="../../scripts/icecubes.js"></script>
-<script src="../../scripts/cookie.js"></script>
+<script src="js/icecubes.js"></script>
+<script src="js/cookie.js"></script>
 <script>
     var counter = 0;
     var win = 0;
@@ -55,7 +55,7 @@
     var lng = 'hi';
     $(function() {
         icecubes.readData();
-        icecubes.addQuestion('अमन और जामुनी अभी भी प्यासे हैं, और इस बार वे नींबुपानी के बड़े गिलास खरीदते हैं। पाँच मिनट बाद जामुनी का गिलास 40% भरा हुआ और अमन का गिलास 70% भरा हुआ है। सारी बर्फ पिघल गई है, क्योंकि गरमी बहुत है। जामुनी को अपने गिलास में और बर्फ डालने में मदद करें और गिलास पूरा भर दें।');
+        icecubes.addQuestion('अमन और जामुनी अभी भी प्यासे हैं, और इस बार वे नींबुपानी के बड़े गिलास खरीदते हैं। पाँच मिनट बाद जामुनी का गिलास 40% भरा हुआ और अमन का गिलास 70% भरा हुआ है। सारी बर्फ पिघल गई है, क्योंकि गरमी बहुत है। जामुनी को अपने गिलास में और बर्फ डालने में मदद करें और गिलास पूरा भर दें।');
         playattempt = parseInt(localStorage.getItem('playattempt'));
         $('.reset').click(function() {
             location.reload();
