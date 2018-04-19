@@ -120,6 +120,7 @@ var icecubes = {
         icecubes.save();
     },
     updateScore: function (s) {
+        console.log('Update Score Before ajax function:'+  localStorage.getItem("data"));
         icecubes.save();
         csrftoken = $.cookie("csrftoken");
         /*$.ajax({
