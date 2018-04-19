@@ -119,8 +119,7 @@ var icecubes = {
         myData.appData.totalScore = s;
         icecubes.save();
     },
-    updateScore: function (s) {
-        console.log('Update Score Before ajax function:'+  localStorage.getItem("data"));
+    updateScore: function (s) {        
         icecubes.save();
         csrftoken = $.cookie("csrftoken");
         /*$.ajax({
@@ -135,6 +134,7 @@ var icecubes = {
                 window.open('../../data.json', '_blank');
             }
         });*/
+        console.log('Update Score Before ajax function:'+  localStorage.getItem("data"));
         $.ajax({
             type: "POST",
             data: {
