@@ -40,75 +40,67 @@ var icecubes = {
         myData.sessionId = $.cookie("session_ids");
         myData.appData.tool_startTime = timeStamp();
         myData.appData.language = lng;
+
+        var obj = null;
+        obj = $.extend(true, {}, attempt);
+        myData.appData.attempt.push(obj);
         icecubes.save();
     },
     addQuestion: function (q) {
-        var obj = null;
-        for (var i = 0; i <= myData.appData.attempt.length - 1; i++) {
-            if (myData.appData.attempt[i].qid == qid) {
-                obj = myData.appData.attempt[i];
-                break;
-            }
+        if (myData.appData.attempt[0].qid != qid) {
+            myData.appData.attempt[0].currentActivity = '';
+            myData.appData.attempt[0].activity_startTime = '';
+            myData.appData.attempt[0].language = '';
+            myData.appData.attempt[0].NumberofAttempts = '';
+            myData.appData.attempt[0].FirstAttemptAnswer = '';
+            myData.appData.attempt[0].FirstAttemptValidity = '';
+            myData.appData.attempt[0].SecondAttemptAnswer = '';
+            myData.appData.attempt[0].SecondAttemptValidity = '';
+            myData.appData.attempt[0].activity_endTime = '';
+            myData.appData.attempt[0].activityScore = '';
+            myData.appData.attempt[0].createdAt = '';
+            myData.appData.attempt[0].qid = qid;
+            myData.appData.attempt[0].currentActivity = 'Activity ' + qid + '_' + q;
+            myData.appData.attempt[0].activity_startTime = timeStamp();
+            icecubes.save();
         }
-
-        if (obj == null) {
-            obj = $.extend(true, {}, attempt);
-            obj.qid = qid;
-            obj.currentActivity = 'Activity ' + qid + '_' + q;
-            myData.appData.attempt.push(obj);
-        } else {
-            obj.qid = qid;
-        }
-        myData.appData.attempt[qid - 1].activity_startTime = timeStamp();
-        icecubes.save();
     },
     addAnswer: function (id, e, a) {
         var obj = null;
-        for (var i = 0; i <= myData.appData.attempt.length - 1; i++) {
-            if (myData.appData.attempt[i].qid == qid) {
-                obj = myData.appData.attempt[i];
-                break;
-            }
-        }
-        if (obj != null) {
-            obj.qid = qid;
-            if (a == 0) {
-                if (e) {
-                    obj.NumberofAttempts = parseInt(a) + 1;
-                    obj.FirstAttemptAnswer = id;
-                    obj.FirstAttemptValidity = 'correct';
-                    obj.language = lng;
-                    obj.activityScore = '0';
-                } else {
-                    var att = $.extend(true, {}, attempt);
-                    obj.NumberofAttempts = parseInt(a) + 1;
-                    obj.FirstAttemptAnswer = id;
-                    obj.FirstAttemptValidity = 'incorrect';
-                    obj.language = lng;
-                }
+        obj = myData.appData.attempt[0]
+        if (a == 0) {
+            if (e) {
+                obj.NumberofAttempts = parseInt(a) + 1;
+                obj.FirstAttemptAnswer = id;
+                obj.FirstAttemptValidity = 'correct';
+                obj.language = lng;
+                obj.activityScore = '0';
             } else {
-                if (e) {
-                    obj.NumberofAttempts = parseInt(a) + 1;
-                    obj.SecondAttemptAnswer = id;
-                    obj.SecondAttemptValidity = 'correct';
-                    obj.activityScore = '0';
-                    obj.language = lng;
-                } else {
-                    var att = $.extend(true, {}, attempt);
-                    obj.NumberofAttempts = parseInt(a) + 1;
-                    obj.SecondAttemptAnswer = id;
-                    obj.SecondAttemptValidity = 'incorrect';
-                    obj.language = lng;
-                }
+                obj.NumberofAttempts = parseInt(a) + 1;
+                obj.FirstAttemptAnswer = id;
+                obj.FirstAttemptValidity = 'incorrect';
+                obj.language = lng;
             }
-
+        } else {
+            if (e) {
+                obj.NumberofAttempts = parseInt(a) + 1;
+                obj.SecondAttemptAnswer = id;
+                obj.SecondAttemptValidity = 'correct';
+                obj.activityScore = '0';
+                obj.language = lng;
+            } else {
+                obj.NumberofAttempts = parseInt(a) + 1;
+                obj.SecondAttemptAnswer = id;
+                obj.SecondAttemptValidity = 'incorrect';
+                obj.language = lng;
+            }
         }
         icecubes.save();
-        icecubes.updateScore();
+        //icecubes.updateScore();
     },
     save: function () {
         localStorage.setItem("data", JSON.stringify(myData));
-        console.log(myData);
+        //console.log(myData);
     },
     readData: function () {
         myData = $.parseJSON(localStorage.getItem("data"));
@@ -119,8 +111,7 @@ var icecubes = {
         myData.appData.totalScore = s;
         icecubes.save();
     },
-    updateScore: function (s) {        
-        icecubes.save();
+    updateScore: function (s) {
         csrftoken = $.cookie("csrftoken");
         /*$.ajax({
             type: "POST",
@@ -128,13 +119,12 @@ var icecubes = {
                 "payload": localStorage.getItem("data"),
                 'csrfmiddlewaretoken': csrftoken,
             },
-            url: "../../saveJson.php",
+            url: "saveJson.php",
             datatype: "json",
             success: function (response) {
-                window.open('../../data.json', '_blank');
+                window.open('data.json', '_blank');
             }
         });*/
-        console.log('Update Score Before ajax function:'+  localStorage.getItem("data"));
         $.ajax({
             type: "POST",
             data: {
