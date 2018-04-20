@@ -42,8 +42,8 @@
             icecubes.addAnswer($('#myanswer').val(), true, playattempt);
         });
         $('.ans-reset').click(function() {
-            myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
-            myData.appData.attempt[qid - 1].createdAt = timeStamp();
+            myData.appData.attempt[0].activity_endTime = timeStamp();
+            myData.appData.attempt[0].createdAt = timeStamp();
             icecubes.save();
             window.open('result.html', '_self');
             return false;

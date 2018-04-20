@@ -87,8 +87,8 @@
         $('.ans-reset').click(function() {
             if (win == 1) {
                 localStorage.setItem('playattempt', 0);
-                myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
-                myData.appData.attempt[qid - 1].createdAt = timeStamp();
+                myData.appData.attempt[0].activity_endTime = timeStamp();
+                myData.appData.attempt[0].createdAt = timeStamp();
                 icecubes.save();
                 window.open('activity3.html', '_self');
                 return false;
@@ -97,8 +97,8 @@
                 location.reload();
             } else {
                 localStorage.setItem('playattempt', 0);
-                myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
-                myData.appData.attempt[qid - 1].createdAt = timeStamp();
+                myData.appData.attempt[0].activity_endTime = timeStamp();
+                myData.appData.attempt[0].createdAt = timeStamp();
                 icecubes.save();
                 window.open('activity3.html', '_self');
             }

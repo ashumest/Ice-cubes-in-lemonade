@@ -82,18 +82,20 @@
         $('.ans-reset').click(function() {
             if (win == 1) {
                 localStorage.setItem('playattempt', 0);
-                myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
-                myData.appData.attempt[qid - 1].createdAt = timeStamp();
+                myData.appData.attempt[0].activity_endTime = timeStamp();
+                myData.appData.attempt[0].createdAt = timeStamp();
                 icecubes.save();
+                icecubes.updateScore();
                 window.open('activity2.html', '_self');
                 return false;
             }
             if (parseInt(localStorage.getItem('playattempt')) <= 1) {
                 location.reload();
             } else {
-                myData.appData.attempt[qid - 1].clue_endTime = timeStamp();
-                myData.appData.attempt[qid - 1].createdAt = timeStamp();
+                myData.appData.attempt[0].activity_endTime = timeStamp();
+                myData.appData.attempt[0].createdAt = timeStamp();
                 icecubes.save();
+                icecubes.updateScore();
                 localStorage.setItem('playattempt', 0);
                 window.open('activity2.html', '_self');
             }
