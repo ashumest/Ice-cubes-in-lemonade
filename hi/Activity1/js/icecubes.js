@@ -104,7 +104,7 @@ var icecubes = {
 
         }
         icecubes.save();
-        icecubes.updateScore();
+        //icecubes.updateScore();
     },
     save: function () {
         localStorage.setItem("data", JSON.stringify(myData));
