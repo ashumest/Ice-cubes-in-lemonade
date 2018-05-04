@@ -87,7 +87,7 @@
                     icecubes.addAnswer(counter + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('You added too many ice cubes! You should have added 18 ice cubes in all to make the glass full.');
+                    $('.message p').html('You should have added 18 ice cubes in all to make the glass full.');
                     $('.ans-reset').attr('src', 'images1/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(counter + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
