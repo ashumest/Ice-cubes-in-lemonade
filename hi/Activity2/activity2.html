@@ -16,7 +16,7 @@
             <div class="reset"><img src="images2/RESET_NORMAL_new.png"></div>
             <div class="popup">
                 <div class="message">
-                    <p>ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।</p> <img src="images2/RESET_NORMAL_new.png" class="ans-reset"> </div>
+                    <p>ओह! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।</p> <img src="images2/RESET_NORMAL_new.png" class="ans-reset"> </div>
             </div>
         </div>
     </div>
@@ -56,11 +56,11 @@
                     icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal > 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('ओह ! नींबुपानी बाहर गिर गया ! एक-दो और बर्फ के क्यूब डालने की कोशिश करें।');
+                    $('.message p').html('ओह! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal < 6) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('“ओह ! आपका अनुमान गलत है! गिलास अभी भी पूरा नहीं भरा। ');
+                    $('.message p').html('“ओह! आपका अनुमान गलत है! गिलास अभी भी पूरा नहीं भरा। ');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
             } else {
@@ -72,12 +72,12 @@
                     icecubes.addAnswer(myVal + '-ice-cubes', true, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal > 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('ओह ! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
+                    $('.message p').html('ओह! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 } else if (myVal < 9) {
                     $('.popup').css('display', 'block');
-                    $('.message p').html('ओह ! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
+                    $('.message p').html('ओह! आपका अनुमान गलत है। अमन का गिलास 70% भरा था। गिलास का शेष 30% भरने के लिए बर्फ के 9 क्यूब चाहिए।');
                     $('.ans-reset').attr('src', 'images2/NEXT_BUTTON_NORMAL.png');
                     icecubes.addAnswer(myVal + '-ice-cubes', false, parseInt(localStorage.getItem('playattempt')));
                 }
